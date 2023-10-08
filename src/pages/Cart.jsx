@@ -16,7 +16,7 @@ const Cart = ({data}) => {
             <p>
               <span className="text-xl font-bold text-pink-500">{price}</span>
                     </p>
-                    <p>{description.slice(0,35)}</p>
+                    <p>{description.slice(0,30)}...</p>
             <div className="card-actions flex justify-center">
               <Link to={`/data/${id}`}>
                 <button className="btn bg-pink-500 text-white text-center text-xl">
