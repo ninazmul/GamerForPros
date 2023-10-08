@@ -3,7 +3,7 @@
     "id": "0",
     "name": "Paid Games",
     "title": "Premium Gaming Experience",
-    "description": "Explore a collection of premium video games for purchase. Enjoy high-quality graphics and immersive gameplay.",
+    "description": "Explore a collection of premium video games for purchase. Enjoy high-quality graphics and immersive gameplay. Immerse yourself in a world of epic adventures, stunning visuals, and challenging gameplay. Unlock exclusive content and enhance your gaming experience with these premium titles. From action-packed adventures to strategic simulations, these games offer the best in gaming entertainment. Prices range from $19.99 to $59.99.",
     "price": "$19.99 - $59.99",
     "image": "https://i.ibb.co/vqsFm79/2208-w032-n002-585a-p30-585.jpg"
   },
@@ -11,7 +11,7 @@
     "id": "1",
     "name": "Free Game",
     "title": "Free-to-Play Games",
-    "description": "Discover a selection of free-to-play video games. Enjoy gaming without any upfront costs.",
+    "description": "Discover a selection of free-to-play video games. Enjoy gaming without any upfront costs. Dive into a world of endless possibilities with these free games. Experience a wide range of genres, from first-person shooters to massive multiplayer online adventures. Don't miss out on the opportunity to play for free and join a vibrant gaming community.",
     "price": "Free to Play",
     "image": "https://i.ibb.co/cy2Zc1V/3717678.jpg"
   },
@@ -19,7 +19,7 @@
     "id": "3",
     "name": "Battle Royale",
     "title": "Battle Royale Experience",
-    "description": "Experience intense battle royale action in various multiplayer games. Compete to be the last player or team standing.",
+    "description": "Experience intense battle royale action in various multiplayer games. Compete to be the last player or team standing. Engage in heart-pounding battles on dynamic maps. Team up with friends or go solo to prove your skills in the battle royale arena. With varying game modes and strategies, the excitement never ends.",
     "price": "Varies",
     "image": "https://i.ibb.co/zR9T4x3/dzpm-8f78-201215.jpg"
   },
@@ -27,7 +27,7 @@
     "id": "4",
     "name": "Sports",
     "title": "Sports Gaming Extravaganza",
-    "description": "Play your favorite sports virtually. Enjoy realistic gameplay and compete against friends or AI opponents.",
+    "description": "Play your favorite sports virtually. Enjoy realistic gameplay and compete against friends or AI opponents. Step onto the virtual field, court, or arena and experience the thrill of sports gaming. Whether you're a fan of soccer, basketball, or tennis, these games offer an authentic sports experience. Challenge your friends to a match or test your skills against computer-controlled opponents. Prices range from $29.99 to $49.99.",
     "price": "$29.99 - $49.99",
     "image": "https://i.ibb.co/71Z1Q3J/28sf-tm6c-230329.jpg"
   },
@@ -35,7 +35,7 @@
     "id": "5",
     "name": "Racing Games",
     "title": "High-Speed Racing Thrills",
-    "description": "Rev up your engines and race against opponents in exciting racing video games. Choose your favorite cars and tracks.",
+    "description": "Rev up your engines and race against opponents in exciting racing video games. Choose your favorite cars and tracks. Get ready for high-speed adrenaline-pumping action with these racing games. Select from a wide range of cars, customize them, and hit the tracks. Compete against skilled opponents and master challenging circuits. Prices range from $29.99 to $49.99.",
     "price": "$29.99 - $49.99",
     "image": "https://i.ibb.co/f4mYTns/Thanit-May-29.jpg"
   },
@@ -43,7 +43,7 @@
     "id": "6",
     "name": "Open World Games",
     "title": "Explore Vast Open Worlds",
-    "description": "Dive into vast open worlds filled with exploration and adventure. Embark on epic journeys and uncover hidden secrets.",
+    "description": "Dive into vast open worlds filled with exploration and adventure. Embark on epic journeys and uncover hidden secrets. Immerse yourself in immersive open-world environments. Roam freely, complete quests, and interact with a richly detailed world. From fantasy realms to post-apocalyptic wastelands, these games offer endless exploration. Prices range from $39.99 to $69.99.",
     "price": "$39.99 - $69.99",
     "image": "https://i.ibb.co/x181QgY/40100.jpg"
   }

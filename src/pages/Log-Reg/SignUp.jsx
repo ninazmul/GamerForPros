@@ -1,12 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 const SignUp = () => {
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, signInWithGoogle } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const [registerError, setRegisterError] = useState('');
+  const [success, setSuccess] = useState('');
+  const [show, setShow] = useState(false);
     
 
     const handleSignUp = (e) => {
@@ -17,16 +22,59 @@ const SignUp = () => {
       const email = form.get("email");
       const password = form.get("password");
       console.log(fName, lName, email, password);
-        
+
+      setRegisterError("");
+      setSuccess("");
+
+      if (password.length < 6) {
+        setRegisterError("Password should be at least 6 characters or longer!");
+        return;
+      } else if (!/[A-Z]/.test(password)) {
+        setRegisterError(
+          "Your password should have at least one Upper case character!"
+        );
+        return;
+      } else if (!/[a-z]/.test(password)) {
+        setRegisterError(
+          "Your password should have at least one Lower case character!"
+        );
+        return;
+      } else if (!/[0-9]/.test(password)) {
+        setRegisterError("Your password should have at least one number!");
+        return;
+      } else if (!/[!@#$%^&*()-+]/.test(password)) {
+        setRegisterError(
+          "Your password should have at least one spacial character!"
+        );
+        return;
+      }
+
+      
+
         createUser(fName, lName, email, password)
           .then((result) => {
             console.log(result.user);
             navigate(location?.state ? location.state : "/");
+            setSuccess('User Created Successfully!')
           })
           .catch((error) => {
             console.error(error);
+            setRegisterError(error.message);
           });
     };
+  
+  const handleGoogleBtn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+        navigate(location?.state ? location.state : "/");
+        setSuccess("User Created Successfully!");
+      })
+      .catch((error) => {
+        console.error(error);
+        setRegisterError(error.message);
+      });
+  }
 
     return (
       <div>
@@ -36,9 +84,7 @@ const SignUp = () => {
               <div className="text-center lg:text-left">
                 <h1 className="text-5xl font-bold">Sign-Up now!</h1>
                 <p className="py-6">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                  assumenda excepturi exercitationem quasi. In deleniti eaque
-                  aut repudiandae et a id nisi.
+                  Sign Up to your account to access all of our features.
                 </p>
               </div>
               <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-blue-900">
@@ -87,16 +133,28 @@ const SignUp = () => {
                     <label className="label">
                       <span className="label-text text-white">Password</span>
                     </label>
-                    <input
-                      type="password"
-                      name="password"
-                      placeholder="password"
-                      className="input input-bordered bg-blue-400 text-black"
-                      required
-                    />
+                    <div className="relative ">
+                      <input
+                        type={show ? "text" : "password"}
+                        name="password"
+                        placeholder="password"
+                        className="input input-bordered bg-blue-400 text-black w-full"
+                        required
+                      />
+                      <span
+                        className="right-2 top-2.5 absolute"
+                        onClick={() => setShow(!show)}
+                      >
+                        {show ? (
+                          <AiFillEye className="text-2xl text-black"></AiFillEye>
+                        ) : (
+                          <AiFillEyeInvisible className="text-2xl text-black"></AiFillEyeInvisible>
+                        )}
+                      </span>
+                    </div>
                   </div>
                   <div className="form-control mt-6">
-                    <button className="btn bg-blue-700 text-white">
+                    <button className="btn bg-pink-500 text-white">
                       Register
                     </button>
                     {
@@ -109,6 +167,19 @@ const SignUp = () => {
                       </p>
                     }
                   </div>
+                  <div className="text-center ">
+                    <h1 className="text-center">Or continue with</h1>
+                    <button
+                      onClick={handleGoogleBtn}
+                      className="border px-2 py-1 rounded-lg text-center m-2 w-full flex items-center justify-center gap-1 text-2xl font-bold"
+                    >
+                      <FcGoogle></FcGoogle>Google
+                    </button>
+                  </div>
+                  {registerError && (
+                    <p className="text-red-500">{registerError}</p>
+                  )}
+                  {success && <p className="text-green-500">{success}</p>}
                 </form>
               </div>
             </div>

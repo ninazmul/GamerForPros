@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Cart = ({data}) => {
 
-    const { id, title, image, price } = data;
+    const { id, title, image, price, description } = data;
     return (
       <div>
         <div className="card w-80 h-96 glass">
@@ -14,8 +14,9 @@ const Cart = ({data}) => {
           <div className="card-body">
             <h2 className="card-title">{title}</h2>
             <p>
-              <span className="text-xl font-bold">{price}</span>
-            </p>
+              <span className="text-xl font-bold text-pink-500">{price}</span>
+                    </p>
+                    <p>{description.slice(0,35)}</p>
             <div className="card-actions flex justify-center">
               <Link to={`/data/${id}`}>
                 <button className="btn bg-pink-500 text-white text-center text-xl">

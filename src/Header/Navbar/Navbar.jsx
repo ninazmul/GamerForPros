@@ -91,7 +91,7 @@ const Navbar = () => {
                 {navBtn}
               </ul>
             </div>
-            <a className="btn btn-ghost normal-case text-xl">
+            <a className="btn btn-ghost normal-case text-2xl">
               {" "}
               <img
                 className="w-6 flex items-center"
@@ -106,14 +106,26 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1">{navBtn}</ul>
           </div>
 
-          <div className="navbar-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              </div>
-            </label>
+          <div className="navbar-end ">
             {user ? (
-              <button>
+              <button className="flex items-center gap-4">
+                <Link to="/profile">
+                  <span className="text-pink-500 text-2xl font-bold">
+                    {user.displayName}
+                  </span>
+                </Link>
+                <span>
+                  <Link to="/profile">
+                    <label
+                      tabIndex={0}
+                      className="btn btn-ghost btn-circle avatar"
+                    >
+                      <div className="w-10 rounded-full">
+                        <img src={user.photoURL} />
+                      </div>
+                    </label>
+                  </Link>
+                </span>
                 <a
                   onClick={handleSignOut}
                   className="btn bg-pink-500 text-white font-bold"
@@ -125,7 +137,7 @@ const Navbar = () => {
               <Link to="/login">
                 {" "}
                 <button>
-                  <a className="btn bg-blue-700 text-white font-bold">LogIn</a>
+                  <a className="btn bg-pink-500 text-white font-bold">LogIn</a>
                 </button>
               </Link>
             )}

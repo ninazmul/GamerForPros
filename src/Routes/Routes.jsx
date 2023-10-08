@@ -8,6 +8,7 @@ import SignUp from "../pages/Log-Reg/SignUp";
 import CartDetails from "../pages/CartDetails";
 import PrivateRoute from "./PrivateRoutes/PrivateRoute";
 import FAQ from "../pages/FAQ";
+import Profile from "../pages/Profile";
 
 const routes = createBrowserRouter([
   {
@@ -50,7 +51,13 @@ const routes = createBrowserRouter([
         {
             path: "/faQ",
             element: <FAQ></FAQ>
-      }
+        },
+        {
+            path: '/profile',
+            element: (<PrivateRoute>
+                <Profile></Profile>
+            </PrivateRoute>)
+        }
     ],
   },
 ]);
