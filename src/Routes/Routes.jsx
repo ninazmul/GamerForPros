@@ -9,11 +9,13 @@ import CartDetails from "../pages/CartDetails";
 import PrivateRoute from "./PrivateRoutes/PrivateRoute";
 import FAQ from "../pages/FAQ";
 import Profile from "../pages/Profile";
+import Errorpage from "../pages/ErrorPage/Error";
 
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <Root></Root>,
+        element: <Root></Root>,
+    errorElement: <Errorpage></Errorpage>,
     children: [
       {
         path: "/",
