@@ -4,11 +4,18 @@ import Header from "../Header/Header/Header";
 import Cart from "./Cart";
 import DinoGame from "./DinoGame";
 import { AiFillPlayCircle } from "react-icons/ai";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 const Home = () => {
     const datas = useLoaderData();
     // console.log(data)
     const youtubeGamingVideosLink = "https://www.youtube.com/search?q=gaming+videos&sort=relevance&view=grid";
+
+    useEffect(() => {
+        Aos.init({duration: 2000});
+    },[])
 
     return (
       <div>
@@ -17,7 +24,10 @@ const Home = () => {
           Popular Services:
         </h1>
 
-        <div className="grid grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <div
+          className="grid grid-cols-3 gap-4 max-w-6xl mx-auto"
+          data-aos="fade-right"
+        >
           {datas.map((data) => (
             <Cart key={data.id} data={data}></Cart>
           ))}
@@ -25,7 +35,10 @@ const Home = () => {
         <div>
           <h1 className="text-3xl text-center text-pink-500 font-bold p-4"></h1>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div
+          className="flex flex-col justify-center items-center"
+          data-aos="fade-left"
+        >
           <h1 className="text-3xl text-center text-pink-500 font-bold p-4">
             Watch Gaming videos on YouTube:
             <a href={youtubeGamingVideosLink}>
@@ -45,7 +58,7 @@ const Home = () => {
             </a>
           </h1>
         </div>
-        <div>
+        <div data-aos="fade-right">
           <h1 className="text-3xl text-center text-pink-500 font-bold p-4">
             Play Now:
           </h1>
