@@ -1,17 +1,57 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../Layout/Root";
 import Home from "../pages/Home";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import LogIn from "../pages/Log-Reg/LogIn";
+import SignUp from "../pages/Log-Reg/SignUp";
+import CartDetails from "../pages/CartDetails";
+import PrivateRoute from "./PrivateRoutes/PrivateRoute";
+import FAQ from "../pages/FAQ";
 
 const routes = createBrowserRouter([
-    {
-        path: '/',
-        element: <Root></Root>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>
-            }
-        ]
-    }
-])
+  {
+    path: "/",
+    element: <Root></Root>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: () => fetch("/data.json"),
+      },
+      {
+        path: "/data/:id",
+        element: (
+          <PrivateRoute>
+            <CartDetails></CartDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/contact",
+        element: (
+          <PrivateRoute>
+            <Contact></Contact>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/login",
+        element: <LogIn></LogIn>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
+        },
+        {
+            path: "/faQ",
+            element: <FAQ></FAQ>
+      }
+    ],
+  },
+]);
 export default routes;

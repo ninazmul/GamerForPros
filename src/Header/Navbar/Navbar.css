@@ -1,0 +1,17 @@
+.NavLink {
+ 
+  color: white;
+}
+
+.active {
+  
+  background-color: red;
+}
+.NavLink.active {
+  /* Add your active styles here */
+  background-color: red;
+  color: white;
+}
+#dNav{
+  background-color: rgb(0, 0, 77);
+}

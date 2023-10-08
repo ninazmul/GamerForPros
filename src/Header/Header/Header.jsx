@@ -1,8 +1,9 @@
 import moment from "moment";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-      <div>
+      <div className="">
         <div
           className="hero min-h-screen"
           style={{
@@ -20,11 +21,14 @@ const Header = () => {
                     Play Like a <span className="text-pink-500">Pro</span>
                   </h1>
                   <p className="mb-5">Hey Gamer! Welcome to Our Gamer World!</p>
-                  <button className="btn bg-blue-700 text-white font-bold">
-                    Get Started
-                  </button>
-                  <div className="text-xl font-bold">
-                    {moment().format('LLLL')}</div>
+                  <Link to='/signUp'>
+                    <button className="btn bg-pink-500 text-white font-bold">
+                      Get Started
+                    </button>
+                  </Link>
+                  <div className="text-xl font-bold py-4">
+                    {moment().format("LLLL")}
+                  </div>
                 </div>
               </div>
               <div>

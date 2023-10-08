@@ -1,0 +1,50 @@
+[
+  {
+    "id": "0",
+    "name": "Paid Games",
+    "title": "Premium Gaming Experience",
+    "description": "Explore a collection of premium video games for purchase. Enjoy high-quality graphics and immersive gameplay.",
+    "price": "$19.99 - $59.99",
+    "image": "https://i.ibb.co/vqsFm79/2208-w032-n002-585a-p30-585.jpg"
+  },
+  {
+    "id": "1",
+    "name": "Free Game",
+    "title": "Free-to-Play Games",
+    "description": "Discover a selection of free-to-play video games. Enjoy gaming without any upfront costs.",
+    "price": "Free to Play",
+    "image": "https://i.ibb.co/cy2Zc1V/3717678.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Battle Royale",
+    "title": "Battle Royale Experience",
+    "description": "Experience intense battle royale action in various multiplayer games. Compete to be the last player or team standing.",
+    "price": "Varies",
+    "image": "https://i.ibb.co/zR9T4x3/dzpm-8f78-201215.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Sports",
+    "title": "Sports Gaming Extravaganza",
+    "description": "Play your favorite sports virtually. Enjoy realistic gameplay and compete against friends or AI opponents.",
+    "price": "$29.99 - $49.99",
+    "image": "https://i.ibb.co/71Z1Q3J/28sf-tm6c-230329.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Racing Games",
+    "title": "High-Speed Racing Thrills",
+    "description": "Rev up your engines and race against opponents in exciting racing video games. Choose your favorite cars and tracks.",
+    "price": "$29.99 - $49.99",
+    "image": "https://i.ibb.co/f4mYTns/Thanit-May-29.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Open World Games",
+    "title": "Explore Vast Open Worlds",
+    "description": "Dive into vast open worlds filled with exploration and adventure. Embark on epic journeys and uncover hidden secrets.",
+    "price": "$39.99 - $69.99",
+    "image": "https://i.ibb.co/x181QgY/40100.jpg"
+  }
+]
