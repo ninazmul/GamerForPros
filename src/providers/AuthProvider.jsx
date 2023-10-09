@@ -13,9 +13,14 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const createUser = (fName, lName, email, password) => {
+    const createUser = (displayName, email, password) => {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password, fName, lName)
+        return createUserWithEmailAndPassword(
+          auth,
+          email,
+          password,
+          displayName
+        );
     }
     const signIn = (email, password) => {
         setLoading(true);

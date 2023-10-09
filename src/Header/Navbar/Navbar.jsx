@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
@@ -18,45 +18,21 @@ const Navbar = () => {
       });
   };
 
-    const [isActive, setIsActive] = useState(false);
-
 
     const navBtn = (
       <>
         <li>
-          <NavLink
-            className={`NavLink ${isActive === true && "active"}`}
-            to="/"
-          >
-            Home
-          </NavLink>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink
-            className={`NavLink ${isActive === true && "active"}`}
-            to="/about"
-          >
-            About
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink
-            className={`NavLink ${isActive === true && "active"}`}
-            to="/faQ"
-          >
-            FAQ
-          </NavLink>
+          <NavLink to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink
-            className={`NavLink ${isActive === true && "active"}`}
-            to="/contact"
-          >
-            Contact
-          </NavLink>
+          <NavLink to="/faQ">FAQ</NavLink>
         </li>
-        
+        <li>
+          <NavLink to="/contact">Contact</NavLink>
+        </li>
       </>
     );
 
@@ -84,14 +60,12 @@ const Navbar = () => {
               <ul
                 tabIndex={0}
                 id="dNav"
-                className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 ${
-                  isActive && "active"
-                }`}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52"
               >
                 {navBtn}
               </ul>
             </div>
-            <a className="btn btn-ghost normal-case text-2xl">
+            <a className="btn btn-ghost normal-case md:text-2xl">
               {" "}
               <img
                 className="w-6 flex items-center"
@@ -102,7 +76,7 @@ const Navbar = () => {
               <span className="text-pink-500">Pro's</span>
             </a>
           </div>
-          <div className="navbar-center hidden lg:flex">
+          <div className="navbar-center hidden lg:block">
             <ul className="menu menu-horizontal px-1">{navBtn}</ul>
           </div>
 
@@ -110,7 +84,7 @@ const Navbar = () => {
             {user ? (
               <button className="flex items-center gap-4">
                 <Link to="/profile">
-                  <span className="text-pink-500 text-2xl font-bold">
+                  <span className="text-pink-500 md:text-2xl hidden lg:block font-bold">
                     {user.displayName}
                   </span>
                 </Link>

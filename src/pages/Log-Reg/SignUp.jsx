@@ -3,6 +3,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
 
 const SignUp = () => {
 
@@ -17,11 +21,11 @@ const SignUp = () => {
     const handleSignUp = (e) => {
       e.preventDefault();
         const form = new FormData(e.currentTarget);
-        const fName = form.get('fName');
-        const lName = form.get('lName')
+        const displayName = form.get("displayName");
+        
       const email = form.get("email");
       const password = form.get("password");
-      console.log(fName, lName, email, password);
+      console.log(displayName, email, password);
 
       setRegisterError("");
       setSuccess("");
@@ -51,11 +55,12 @@ const SignUp = () => {
 
       
 
-        createUser(fName, lName, email, password)
+        createUser(displayName, email, password)
           .then((result) => {
             console.log(result.user);
             navigate(location?.state ? location.state : "/");
-            setSuccess('User Created Successfully!')
+            setSuccess('User Created Successfully!');
+            toast.success("User Created Successfully!"); 
           })
           .catch((error) => {
             console.error(error);
@@ -67,8 +72,9 @@ const SignUp = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
-        navigate(location?.state ? location.state : "/");
         setSuccess("User Created Successfully!");
+        toast.success("User Created Successfully!");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error);
@@ -78,6 +84,7 @@ const SignUp = () => {
 
     return (
       <div>
+        <ToastContainer />
         <div>
           <div className="hero min-h-screen max-w-6xl mx-auto">
             <div className="hero-content flex-col lg:flex-row-reverse">
@@ -89,33 +96,17 @@ const SignUp = () => {
               </div>
               <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-blue-900">
                 <form onSubmit={handleSignUp} className="card-body">
-                  <div className="flex justify-between w-80 gap-1 flex-1">
-                    <div className="form-control">
-                      <label className="label">
-                        <span className="label-text text-white">
-                          First Name
-                        </span>
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="first name"
-                        name="fName"
-                        className="input input-bordered bg-blue-400 text-black w-40"
-                        required
-                      />
-                    </div>
-                    <div className="form-control">
-                      <label className="label">
-                        <span className="label-text text-white">Last Name</span>
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="last name"
-                        name="lName"
-                        className="input input-bordered bg-blue-400  w-40 text-black "
-                        required
-                      />
-                    </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text text-white">Your Name</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Your name"
+                      name="displayName"
+                      className="input input-bordered bg-blue-400 text-black "
+                      required
+                    />
                   </div>
                   <div className="form-control">
                     <label className="label">

@@ -53,6 +53,14 @@ const LogIn = () => {
         console.log(result.user);
         navigate(location?.state ? location.state : "/");
         setSuccess("Log In Successfully!");
+        toast.success("Login successful!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       })
       .catch((error) => {
         console.error(error);

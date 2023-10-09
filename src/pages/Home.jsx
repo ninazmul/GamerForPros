@@ -3,7 +3,7 @@ import Header from "../Header/Header/Header";
 
 import Cart from "./Cart";
 import DinoGame from "./DinoGame";
-import { AiFillPlayCircle } from "react-icons/ai";
+
 import Aos from "aos";
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
@@ -20,12 +20,12 @@ const Home = () => {
     return (
       <div>
         <Header></Header>
-        <h1 className="text-3xl text-center text-pink-500 font-bold p-4">
+        <h1 className="md:text-3xl text-xl text-center text-pink-500 font-bold p-4">
           Popular Services:
         </h1>
 
         <div
-          className="grid grid-cols-3 gap-4 max-w-6xl mx-auto"
+          className="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto"
           data-aos="fade-right"
         >
           {datas.map((data) => (
@@ -33,33 +33,31 @@ const Home = () => {
           ))}
         </div>
         <div>
-          <h1 className="text-3xl text-center text-pink-500 font-bold p-4"></h1>
+          <h1 className="md:text-3xl text-center text-pink-500 font-bold p-4"></h1>
         </div>
         <div
           className="flex flex-col justify-center items-center"
           data-aos="fade-left"
         >
-          <h1 className="text-3xl text-center text-pink-500 font-bold p-4">
+          <h1 className="md:text-3xl text-xl text-center text-pink-500 font-bold p-4">
             Watch Gaming videos on YouTube:
             <a href={youtubeGamingVideosLink}>
               <span>
-                <div className="relative ">
-                  <AiFillPlayCircle className="absolute top-36 right-52 text-8xl"></AiFillPlayCircle>
-                  <h1 className="text-4xl absolute top-60 left-32 text-white font-bold ">
-                    Watch Now!
-                  </h1>
+                <div className="">
                   <img
-                    className="text-center flex justify-center w-96 ml-8"
+                    className="text-center flex justify-center w-72 md:w-96 ml-8"
                     src="https://i.ibb.co/dK4nGDN/3839218-removebg-preview.png"
                     alt=""
                   />
+                  <h1 className="text-2xl text-white font-bold ">Watch Now!</h1>
+                  
                 </div>
               </span>
             </a>
           </h1>
         </div>
         <div data-aos="fade-right">
-          <h1 className="text-3xl text-center text-pink-500 font-bold p-4">
+          <h1 className="text-xl md:text-3xl text-center text-pink-500 font-bold p-4">
             Play Now:
           </h1>
           <p className="text-center">press 'space' to play and jump. Enjoy!</p>
