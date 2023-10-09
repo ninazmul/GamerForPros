@@ -35,8 +35,9 @@ const LogIn = () => {
             showConfirmButton: false,
           });
 
-          navigate(location?.state ? location.state : '/');
           setSuccess("Log In Successfully!");
+          navigate(location?.state ? location.state : '/');
+          
         })
         .catch((error) => {
           console.error(error);
@@ -54,14 +55,17 @@ const LogIn = () => {
       .then((result) => {
         console.log(result.user);
         
-        setSuccess("Log In Successfully!");
+        
         Swal.fire({
           icon: "success",
           title: "Login successful!",
           timer: 3000, 
           showConfirmButton: false,
         });
+        setSuccess("Log In Successfully!");
         navigate(location?.state ? location.state : "/");
+        
+
       })
       .catch((error) => {
         console.error(error);
