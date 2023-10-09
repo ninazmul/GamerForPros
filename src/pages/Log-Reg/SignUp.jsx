@@ -3,8 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 
 
@@ -58,13 +57,25 @@ const SignUp = () => {
         createUser(displayName, email, password)
           .then((result) => {
             console.log(result.user);
-            navigate(location?.state ? location.state : "/");
+            Swal.fire({
+              icon: "success",
+              title: "Login successful!",
+              timer: 3000,
+              showConfirmButton: false,
+            });
+           
             setSuccess('User Created Successfully!');
-            toast.success("User Created Successfully!"); 
+             
+             navigate(location?.state ? location.state : "/");
           })
           .catch((error) => {
             console.error(error);
             setRegisterError(error.message);
+            Swal.fire({
+              icon: "error",
+              title: "Login failed!",
+              text: error.message,
+            });
           });
     };
   
@@ -72,19 +83,29 @@ const SignUp = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        Swal.fire({
+          icon: "success",
+          title: "Login successful!",
+          timer: 3000,
+          showConfirmButton: false,
+        });
         setSuccess("User Created Successfully!");
-        toast.success("User Created Successfully!");
+        
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error);
         setRegisterError(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Login failed!",
+          text: error.message,
+        });
       });
   }
 
     return (
       <div>
-        <ToastContainer />
         <div>
           <div className="hero min-h-screen max-w-6xl mx-auto">
             <div className="hero-content flex-col lg:flex-row-reverse">

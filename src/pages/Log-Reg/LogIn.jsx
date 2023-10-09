@@ -53,7 +53,7 @@ const LogIn = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
-        navigate(location?.state ? location.state : "/");
+        
         setSuccess("Log In Successfully!");
         Swal.fire({
           icon: "success",
@@ -61,6 +61,7 @@ const LogIn = () => {
           timer: 3000, 
           showConfirmButton: false,
         });
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error);
