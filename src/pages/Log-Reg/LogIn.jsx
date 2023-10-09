@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
@@ -29,13 +28,11 @@ const LogIn = () => {
       signIn(email, password)
         .then((result) => {
           console.log(result.user);
-          toast.success("Login successful!", {
-            position: "top-right",
-            autoClose: 3000, 
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
+          Swal.fire({
+            icon: "success",
+            title: "Login successful!",
+            timer: 3000, 
+            showConfirmButton: false,
           });
 
           navigate(location?.state ? location.state : '/');
@@ -44,6 +41,11 @@ const LogIn = () => {
         .catch((error) => {
           console.error(error);
           setRegisterError(error.message);
+          Swal.fire({
+            icon: "error",
+            title: "Login failed!",
+            text: error.message,
+          });
         });
         
     };
@@ -53,18 +55,21 @@ const LogIn = () => {
         console.log(result.user);
         navigate(location?.state ? location.state : "/");
         setSuccess("Log In Successfully!");
-        toast.success("Login successful!", {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+        Swal.fire({
+          icon: "success",
+          title: "Login successful!",
+          timer: 3000, 
+          showConfirmButton: false,
         });
       })
       .catch((error) => {
         console.error(error);
         setRegisterError(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Login failed!",
+          text: error.message,
+        });
       });
   }
 
@@ -147,7 +152,7 @@ const LogIn = () => {
             </div>
           </div>
         </div>
-        <ToastContainer />
+        
       </div>
     );
 };
