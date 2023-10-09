@@ -6,7 +6,7 @@ import Footer from "../pages/footer/Footer";
 
 const Root = () => {
     return (
-      <div className="font-font text-white">
+      <div className="font-font text-white overflow-x-hidden">
         <Navbar></Navbar>
         
         <div className="min-h-[500px]">
