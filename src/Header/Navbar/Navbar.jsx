@@ -65,26 +65,30 @@ const Navbar = () => {
                 {navBtn}
               </ul>
             </div>
-            <a className="btn btn-ghost normal-case md:text-2xl">
-              {" "}
-              <img
-                className="w-6 flex items-center"
-                src="/media/gamerlogo-removebg-preview.png"
-                alt=""
-              />{" "}
-              <span className="text-pink-500">Game</span>for{" "}
-              <span className="text-pink-500">Pro's</span>
-            </a>
+            <div className="logoName">
+              <a className="btn btn-ghost normal-case md:text-2xl">
+                {" "}
+                <span className="flex gap-2 items-center">
+                  <img
+                    className="w-6 flex items-center"
+                    src="/media/gamerlogo-removebg-preview.png"
+                    alt=""
+                  />{" "}
+                  <span className="text-pink-500">Game</span>for{" "}
+                  <span className="text-pink-500">Pro's</span>
+                </span>
+              </a>
+            </div>
           </div>
           <div className="navbar-center hidden lg:block">
             <ul className="menu menu-horizontal px-1">{navBtn}</ul>
           </div>
 
-          <div className="navbar-end ">
+          <div className="navbar-end  ">
             {user ? (
               <button className="flex items-center gap-4">
-                <Link to="/profile">
-                  <span className="text-pink-500 md:text-2xl hidden lg:block font-bold">
+                <Link className="" to="/profile">
+                  <span className="text-pink-500 md:text-2xl navlink font-bold">
                     {user.displayName}
                   </span>
                 </Link>

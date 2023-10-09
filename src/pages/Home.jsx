@@ -10,7 +10,7 @@ import { useEffect } from "react";
 
 const Home = () => {
     const datas = useLoaderData();
-    // console.log(data)
+
     const youtubeGamingVideosLink = "https://www.youtube.com/search?q=gaming+videos&sort=relevance&view=grid";
 
     useEffect(() => {
@@ -60,7 +60,7 @@ const Home = () => {
           <h1 className="text-xl md:text-3xl text-center text-pink-500 font-bold p-4">
             Play Now:
           </h1>
-          <p className="text-center">press 'space' to play and jump. Enjoy!</p>
+          <p className="text-center">press `SPACE KEY` to play and jump. Enjoy!</p>
           <DinoGame />
           <p className="text-center">Reload the Window to stop the game!</p>
         </div>
