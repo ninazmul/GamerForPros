@@ -13,7 +13,7 @@ const CartDetails = () => {
 
       <div className="text-start">
               <h1 className="text-4xl font-bold">{service.title}</h1>
-              <img className="h-96 w-full py-4" src={service.image} alt="" />
+              <img className="h-[500px] w-full py-4" src={service.image} alt="" />
               <p className="text-pink-500 text-2xl font-bold">{ service.price}</p>
               <p>{ service.description}</p>
       </div>
